@@ -26,84 +26,89 @@ let person3 = {
         cupids_candies:"Chocolate Malt"
     }]
 };
-console.log(person3.pizza[0])
+console.log(person3)
 
-
-let favFood = (arr, key) => {
-    return(arr.find(ele => key in ele) || {}[key])
-}
-console.log(favFood(person3, 'pizza'))
-
-
-
-
-let favFood = () => {
-    let i = person3[0];
-    while (i == person3[0]){
-        return `This persons favorite pizza is ${i}`
-    }
-};
-console.log(favFood(person3[0]))
-// I'm so lost on this... Cant get my Inspect/Console to even run properly.
+// // EASY RIGHT WAY
+// let favFood = (person) => {
+//     for(let i = 0; i < Object.keys(person).length; i++){
+//         console.log(f`This person's favorite ${Object.keys(person)[i]} is: ${Object.values(person)[i]})
+//     }
+// };
 
 
 
+// let favFood = (arr, key) => {
+//     return(arr.find(ele => key in ele) || {}[key])
+// }
+// console.log(favFood(person3, 'pizza'))
+
+// let favFood = () => {
+//     let i = person3[0];
+//     while (i == person3[0]){
+//         return `This persons favorite pizza is ${i}`
+//     }
+// };
+// console.log(favFood(person3[0]))
+// // I'm so lost on this... Cant get my Inspect/Console to even run properly.
 
 
 
 
-//=======Exercise #2=========//
-/*
-Write a class for a Person that has attributes for name, age, and arrray of their hobbies.
-If should also have a printInfo method that prints the attributes in a formatted string.
-Create a method that accepts a parameter to add to a Person's list of hobbies.
-Create two people using the 'new' keyword, and print 
-both of their infos. Add a hobby to one persons hobby list.
-*/
 
-// Create our Person Class here
-class Person{
-    constructor(name, age, hobbies){
-        this.name = name;
-        this.age = age;
-        this.hobbies = hobbies;
-    }
-    printInfo(){
-        return `Name: ${this.name} \nAge: ${this.age} \nHobbies: ${this.hobbies}`
-    }
-    addHobbies(new_hobby){
-        console.log(`You have updated your hobbies! New Hobby: ${this.hobbies}`)
-        new_hobby = this.hobbies++ // I cant figure out how to add new attribute to hobbies..
-    }
-};
+
+// //=======Exercise #2=========//
+// /*
+// Write a class for a Person that has attributes for name, age, and arrray of their hobbies.
+// If should also have a printInfo method that prints the attributes in a formatted string.
+// Create a method that accepts a parameter to add to a Person's list of hobbies.
+// Create two people using the 'new' keyword, and print 
+// both of their infos. Add a hobby to one persons hobby list.
+// */
+
+// // Create our Person Class here
+// class Person{
+//     constructor(name, age, hobbies){
+//         this.name = name;
+//         this.age = age;
+//         this.hobbies = hobbies;
+//     }
+//     printInfo(){
+//         console.log(`Name: ${this.name} \nAge: ${this.age} \nHobbies: ${this.hobbies}`)
+//         for (let i = 0; i < this.hobbies.length; i++)
+//         console.log(hobbies[i])
+//     }
+//     addHobbies(hobby){
+//         this.hobbies.push(hobby)
+//         console.log(`You have updated your hobbies! New Hobby: ${this.hobbies}`)
+//     }
+// };
     
-let Jordan = new Person('Jordan', 32, 'Skiing');
-console.log(jordan.printInfo())
+// let jordan = new Person('Jordan', 32, ['Skiing']);
+// console.log(jordan.printInfo())
 
-let Danielle = new Person('Danielle', 30, 'Growing Plants')
-console.log(Danielle.printInfo())
+// let danielle = new Person('Danielle', 30, ['Growing Plants'])
+// console.log(Danielle.printInfo())
 
-console.log(Person.printInfo())
-
-
+// console.log(Person.printInfo())
 
 
-
-
+// jordan.addHobbies('Biking')
+// danielle.addHobbies('Cooking')
 
 
 
 
 
 
-// =============Exercise #3 ============//
-/*
 
-    Create a Promised based function that will check a string to determine if it's length is greater than 10.
-    If the length is greater than ten console log "Big word". 
-    If the length of the string is less than 10 console log "Small Number"
-*/
 
+// // =============Exercise #3 ============//
+// /*
+
+//     Create a Promised based function that will check a string to determine if it's length is greater than 10.
+//     If the length is greater than ten console log "Big word". 
+//     If the length of the string is less than 10 console log "Small Number"
+// */
 
 
 const greaterThan = (string) =>{
@@ -116,49 +121,50 @@ const greaterThan = (string) =>{
     })
 };
 greaterThan('Hello, this is a long string!')
+
 .then((result) =>{
-    console.log(`${result}is a "Big word"`)
+    console.log(`${result}: Big Word!`)
 })
 .catch((error) =>{
-    console.log(`${error} is a "Small Number`)
+    console.log(`${error}: Small Word!`)
 });
 
 
 
-// CODE WARS //
+// // CODE WARS //
 
-//question 1
-// Multiplication Tables
+// //question 1
+// // Multiplication Tables
 
-function multiplicationTable(row, col){
-    out = []
-    for(var i = 1; i <= row; i++){
+// function multiplicationTable(row, col){
+//     out = []
+//     for(var i = 1; i <= row; i++){
         
-        temp = []
-        for(var j = 1; j <= col; j++){
-            temp.push(i*j)
-        }
-        out.push(temp)
-    }
-    return out
-};
-console.log(multiplicationTable(5, 10))
+//         temp = []
+//         for(var j = 1; j <= col; j++){
+//             temp.push(i*j)
+//         }
+//         out.push(temp)
+//     }
+//     return out
+// };
+// console.log(multiplicationTable(5, 10))
 
 
 
-// question 2
-// Are the numbers in order
+// // question 2
+// // Are the numbers in order
 
-function inAscOrder(arr) {
-    for(let i = 0; i < arr.length -1; i++){
-        if(arr[i] > arr[i+1]){
-            return false;
-        }
-    }
-    return true;
-}
+// function inAscOrder(arr) {
+//     for(let i = 0; i < arr.length -1; i++){
+//         if(arr[i] > arr[i+1]){
+//             return false;
+//         }
+//     }
+//     return true;
+// }
 
-console.log(inAscOrder([2,3,4,6,12,2,7,1]))
+// console.log(inAscOrder([2,3,4,6,12,2,7,1]))
 
 
 
